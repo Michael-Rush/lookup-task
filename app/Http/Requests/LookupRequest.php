@@ -39,8 +39,16 @@ class LookupRequest extends FormRequest
         ];
     }
 
+    public function prepareForValidation()
+    {
+        $this->merge([
+            'type' => strtolower($this->type)
+        ]);
+    }
+
     /**
-     * Added custom failed validation response to ensure json is returned even through browser
+     * Added custom failed validation response to
+     * ensure json is returned even through browser
      *
      * @param Validator $validator
      * @return mixed
