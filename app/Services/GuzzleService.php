@@ -16,7 +16,7 @@ class GuzzleService
             $statusCode = $e->getResponse()->getStatusCode();
             switch($statusCode) {
                 case 400:
-                    $message = "400 Bad Request Response from" . $url;
+                    $message = "400 Bad Request Response from " . $url;
                     break;
                 case 404:
                     $message = "404 Not Found Response from " . $url;
